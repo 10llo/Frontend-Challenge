@@ -61,6 +61,11 @@ onMounted(() => {
     <div class="flex-1 px-6 pb-6 overflow-hidden">
       <!-- Main content container -->
       <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col gap-8 h-full">
+        <!-- Logo -->
+        <div class="flex justify-start">
+          <img src="@/assets/logo.svg" alt="Company Logo" class="w-[196px]" />
+        </div>
+
         <!-- Status Title and Search -->
         <div class="flex items-center justify-between">
           <h2 class="text-lg font-semibold text-gray-600">Status</h2>
@@ -80,7 +85,7 @@ onMounted(() => {
         <!-- Table Container -->
         <div class="flex flex-col gap-4 flex-1 overflow-hidden">
           <!-- Table Header -->
-          <div class="flex items-center px-5 py-2 mb-2 text-xs text-gray-300 gap-10" v-once>
+          <div class="flex items-center px-5 py-2 mb-2 text-xs text-gray-400 gap-10" v-once>
             <!-- Name Column -->
             <div class="w-[148px]">
               <span>Name</span>

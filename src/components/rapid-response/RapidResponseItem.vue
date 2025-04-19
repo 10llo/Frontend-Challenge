@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useFocus } from '@/composables/useFocus'
 import { useUIStore } from '@/stores/ui'
 import type { RapidResponse } from '@/types/rapidResponse'
+import UiBadge from '@/components/ui/Badge.vue'
 
 defineOptions({
   name: 'RapidResponseItem',
@@ -22,6 +23,7 @@ const emit = defineEmits<{
 }>()
 
 const isActive = computed(() => props.item.status === 'Active')
+const badgeVariant = computed(() => (isActive.value ? 'success' : 'error'))
 const isEditing = computed(() => uiStore.editingItemId === props.item.id)
 
 const startEdit = () => {
@@ -50,33 +52,28 @@ const handleKeyDown = (event: KeyboardEvent) => {
     :class="{ 'opacity-70': !isActive }"
   >
     <div class="w-[148px] flex flex-col gap-2">
-      <div v-if="!isEditing" class="text-sm font-semibold text-gray-400 h-[28px] flex items-center">
+      <div v-if="!isEditing" class="text-sm font-semibold text-gray-700 h-[28px] flex items-center">
         {{ item.name }}
       </div>
       <input
         v-else
         v-model="uiStore.editedValue"
         @keydown="handleKeyDown"
-        class="text-sm font-semibold text-gray-400 border border-gray-300 rounded px-2 h-[28px] w-full focus:outline-none focus:ring-1 focus:ring-blue-500 box-border"
+        class="text-sm font-semibold text-gray-700 border border-gray-300 rounded px-2 h-[28px] w-full focus:outline-none focus:ring-1 focus:ring-blue-500 box-border"
         v-focus
       />
-      <div class="text-[10px] text-gray-300">Last deploy {{ item.lastDeploy }}</div>
+      <div class="text-[10px] text-gray-400">Last deploy {{ item.lastDeploy }}</div>
     </div>
 
     <div class="w-[100px]">
-      <span
-        class="inline-flex items-center justify-center rounded-md px-2 py-1 text-sm font-semibold"
-        :class="isActive ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'"
-      >
-        {{ item.status }}
-      </span>
+      <UiBadge :label="item.status" :variant="badgeVariant" />
     </div>
 
-    <div class="w-[100px] text-sm font-semibold text-gray-400">
+    <div class="w-[100px] text-sm font-semibold text-gray-700">
       {{ item.properties }}
     </div>
 
-    <div class="w-[148px] text-sm font-semibold text-gray-400">
+    <div class="w-[148px] text-sm font-semibold text-gray-700">
       {{ item.lastPropertyEntry }}
     </div>
 
