@@ -119,7 +119,7 @@ const bottomItems: MenuItem[] = [{ name: 'Settings', icon: 'settings', hasDropdo
 
       <!-- Utility Icons -->
       <div
-        class="mt-4 transition-all duration-300"
+        class="my-4 transition-all duration-300"
         :class="{
           'flex flex-col items-start space-y-4 pl-1': uiStore.isSidebarCollapsed,
           'flex justify-end space-x-4 pr-4': !uiStore.isSidebarCollapsed,
