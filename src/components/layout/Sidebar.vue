@@ -110,7 +110,7 @@ const bottomItems: MenuItem[] = [{ name: 'Settings', icon: 'settings', hasDropdo
           <span
             v-if="item.hasDropdown"
             class="material-icons text-gray-500 transition-all duration-300 shrink-0"
-            :class="uiStore.isSidebarCollapsed ? 'text-xs absolute right-1' : 'ml-auto'"
+            :class="uiStore.isSidebarCollapsed ? 'text-xs absolute right-4' : 'ml-auto'"
           >
             {{ uiStore.isSidebarCollapsed ? 'arrow_right' : 'arrow_drop_down' }}
           </span>
@@ -121,7 +121,7 @@ const bottomItems: MenuItem[] = [{ name: 'Settings', icon: 'settings', hasDropdo
       <div
         class="my-4 transition-all duration-300"
         :class="{
-          'flex flex-col items-start space-y-4 pl-1': uiStore.isSidebarCollapsed,
+          'flex flex-col items-start space-y-4 pl-2.5': uiStore.isSidebarCollapsed,
           'flex justify-end space-x-4 pr-4': !uiStore.isSidebarCollapsed,
         }"
       >
