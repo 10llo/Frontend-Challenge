@@ -30,7 +30,7 @@ const bottomItems: MenuItem[] = [{ name: 'Settings', icon: 'settings', hasDropdo
 <template>
   <aside
     class="h-screen border-r border-gray-200 bg-white flex flex-col relative transition-all duration-300 ease-in-out"
-    :class="uiStore.isSidebarCollapsed ? 'w-16' : 'w-[229px]'"
+    :class="uiStore.isSidebarCollapsed ? 'w-20' : 'w-[229px]'"
   >
     <!-- Toggle Button  -->
     <button
@@ -44,7 +44,7 @@ const bottomItems: MenuItem[] = [{ name: 'Settings', icon: 'settings', hasDropdo
     </button>
 
     <!-- Logo Section -->
-    <div class="flex items-center p-4" :class="{ 'justify-center': uiStore.isSidebarCollapsed }">
+    <div class="flex items-center p-4" :class="{ 'justify-start': uiStore.isSidebarCollapsed }">
       <div v-if="!uiStore.isSidebarCollapsed" class="transition-opacity duration-300 ease-in-out">
         <img :src="logoSvg" alt="8020REi Logo" class="h-8" />
       </div>
@@ -81,7 +81,7 @@ const bottomItems: MenuItem[] = [{ name: 'Settings', icon: 'settings', hasDropdo
             <span
               v-if="item.hasDropdown"
               class="material-icons text-gray-500 transition-all duration-300 shrink-0"
-              :class="uiStore.isSidebarCollapsed ? 'text-xs absolute right-1' : 'ml-auto'"
+              :class="uiStore.isSidebarCollapsed ? 'text-xs absolute right-4' : 'ml-auto'"
               >{{ uiStore.isSidebarCollapsed ? 'arrow_right' : 'arrow_drop_down' }}</span
             >
           </li>
