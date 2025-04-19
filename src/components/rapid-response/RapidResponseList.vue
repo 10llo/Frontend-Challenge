@@ -63,7 +63,7 @@ onMounted(() => {
       <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col gap-8 h-full">
         <!-- Logo -->
         <div class="flex justify-start">
-          <img src="@/assets/logo.svg" alt="Company Logo" class="w-[196px]" />
+          <img src="@/assets/logo.svg" alt="Company Logo" class="w-[196px] -ml-2" />
         </div>
 
         <!-- Status Title and Search -->

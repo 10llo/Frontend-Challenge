@@ -52,7 +52,11 @@ const handleKeyDown = (event: KeyboardEvent) => {
     :class="{ 'opacity-70': !isActive }"
   >
     <div class="w-[148px] flex flex-col gap-2">
-      <div v-if="!isEditing" class="text-sm font-semibold text-gray-700 h-[28px] flex items-center">
+      <div
+        v-if="!isEditing"
+        class="text-sm font-semibold h-[28px] flex items-center"
+        :class="isActive ? 'text-gray-700' : 'text-gray-400'"
+      >
         {{ item.name }}
       </div>
       <input
@@ -69,15 +73,24 @@ const handleKeyDown = (event: KeyboardEvent) => {
       <UiBadge :label="item.status" :variant="badgeVariant" />
     </div>
 
-    <div class="w-[100px] text-sm font-semibold text-gray-700">
+    <div
+      class="w-[100px] text-sm font-semibold"
+      :class="isActive ? 'text-gray-700' : 'text-gray-400'"
+    >
       {{ item.properties }}
     </div>
 
-    <div class="w-[148px] text-sm font-semibold text-gray-700">
+    <div
+      class="w-[148px] text-sm font-semibold"
+      :class="isActive ? 'text-gray-700' : 'text-gray-400'"
+    >
       {{ item.lastPropertyEntry }}
     </div>
 
-    <div class="w-[148px] text-sm font-semibold text-green-600">
+    <div
+      class="w-[148px] text-sm font-semibold"
+      :class="isActive ? 'text-green-600' : 'text-gray-400'"
+    >
       {{ item.price }}
     </div>
 
