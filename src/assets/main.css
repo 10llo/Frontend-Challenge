@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+:root {
+  /* Custom spacing values */
+  --spacing-148: 148px;
+  --spacing-229: 229px;
+
+  /* Custom border radius values */
+  --radius-2xl: 12px; /* For rounded-xl */
+}
+
+body {
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-gray-600);
+  background-color: var(--color-gray-50);
+}
+
+/* Override material icons size to match design */
+.material-icons,
+.material-icons-outlined {
+  font-size: 20px;
+}
+
+.material-icons.text-xs,
+.material-icons-outlined.text-xs {
+  font-size: 16px;
+}
+
+.material-icons.text-sm,
+.material-icons-outlined.text-sm {
+  font-size: 18px;
+}
+
+.material-icons.text-lg,
+.material-icons-outlined.text-lg {
+  font-size: 24px;
+}
+
+/* Status badges */
+.bg-green-50 {
+  background-color: #ebfff8;
+}
+
+.text-green-800 {
+  color: #07704e;
+}
+
+.bg-red-50 {
+  background-color: #faecec;
+}
+
+.text-red-800 {
+  color: #ab1718;
+}
+
+/* Card styling */
+.rounded-xl {
+  border-radius: 12px;
+}
